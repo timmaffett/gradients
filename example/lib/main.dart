@@ -135,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage>
               text: TextSpan(
                 children: [
                   const TextSpan(
-                    text:'Using Flutter gradient: ',
+                    text:'Using gradients package: ',
                     style: TextStyle(fontSize: 14, color: Colors.black)
                   ),
                   TextSpan(
