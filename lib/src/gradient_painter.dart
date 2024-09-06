@@ -130,7 +130,7 @@ class LinearGradientPainter extends LinearGradient implements GradientPainter {
   }
 
   @override
-  int get hashCode => hashValues(begin, end, hashList(colors), hashList(stops),
+  int get hashCode =>  Object.hash(begin, end, Object.hashAll(colors), Object.hashAll(stops??[]),
       tileMode, transform, colorSpace, invert, density);
 }
 
@@ -232,11 +232,11 @@ class RadialGradientPainter extends RadialGradient implements GradientPainter {
   }
 
   @override
-  int get hashCode => hashValues(
+  int get hashCode => Object.hash(
       center,
       radius,
-      hashList(colors),
-      hashList(stops),
+      Object.hashAll(colors),
+      Object.hashAll(stops??[]),
       tileMode,
       focal,
       focalRadius,
@@ -343,8 +343,8 @@ class SweepGradientPainter extends SweepGradient implements GradientPainter {
   }
 
   @override
-  int get hashCode => hashValues(center, startAngle, endAngle, hashList(colors),
-      hashList(stops), tileMode, transform, colorSpace, invert, density);
+  int get hashCode => Object.hash(center, startAngle, endAngle, Object.hashAll(colors),
+      Object.hashAll(stops??[]), tileMode, transform, colorSpace, invert, density);
 }
 
 extension _BuildStops on GradientPainter {
